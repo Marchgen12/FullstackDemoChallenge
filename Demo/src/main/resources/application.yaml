@@ -1,0 +1,14 @@
+server:
+  port: 7891
+  
+spring:
+  datasource:
+    url: jdbc:mariadb://database-1.cg7cn5qcgpss.us-east-2.rds.amazonaws.com:3306/fullstackdb
+    username: fullstackuser
+    password: mypassword
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
