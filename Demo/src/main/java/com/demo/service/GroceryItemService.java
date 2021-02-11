@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.model.GroceryItem;
+import com.demo.model.GroceryList;
 import com.demo.repository.GroceryItemRepo;
 
 import lombok.AllArgsConstructor;

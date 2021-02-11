@@ -65,6 +65,15 @@ public class GroceryController {
 	}
 	
 	///these are for the second part of the implementation
+	@GetMapping("/items/{itemid}")
+	public ResponseEntity<GroceryItem> getItemById(@PathVariable("itemId") int itemId){
+		GroceryItem item = giServ.getGroceryItemById(itemId);
+		if(item == null) {
+			return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(item, HttpStatus.OK);
+	}
+	
 	@GetMapping("/items")
 	public ResponseEntity<List<GroceryItem>> getAllItems(){
 		List<GroceryItem> items = giServ.getAllItems();
@@ -74,6 +83,15 @@ public class GroceryController {
 		return new ResponseEntity<>(items, HttpStatus.OK);
 	}
 	
+//	@PostMapping("/items/{itemId}/{listId}")
+//	public ResponseEntity<String> itemsToList(@PathVariable("itemId") int itemId, @PathVariable("listId") int listId){
+//		GroceryItem item = giServ.getGroceryItemById(itemId);
+//		if(item != null) {
+//			
+//			return new ResponseEntity<>("Item added to list", HttpStatus.ACCEPTED);
+//		}
+//		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+//	}
 	
 	@PostMapping("/items")
 	public ResponseEntity<String> itemsToList(@RequestBody LinkedHashMap<String, String> itemMap){
