@@ -64,7 +64,7 @@ public class GroceryController {
 		return new ResponseEntity<>("Item not in the list", HttpStatus.NOT_FOUND);
 	}
 	
-	
+	///these are for the second part of the implementation
 	@GetMapping("/items")
 	public ResponseEntity<List<GroceryItem>> getAllItems(){
 		List<GroceryItem> items = giServ.getAllItems();
